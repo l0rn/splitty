@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 '''
 A script to batch split video files into its chapters using ffmpeg
 '''
@@ -29,7 +30,7 @@ def split_video(file_path, chapter_times, merge_first, merge_last):
             start = chapter_times[0][0]
         if i >= len(chapter_times) - merge_last:
             end = chapter_times[-1][1]
-        output_file = f"{base_name}_chapter_{i+1}.mp4"
+        output_file = f"{base_name}_chapter_{i+1}.mkv"
         command = [
             'ffmpeg', 
             '-i', file_path, 
